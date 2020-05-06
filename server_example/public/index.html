@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <title> P2P Videocall</title>
         <link rel="stylesheet" type="text/css" href="/easyrtc/easyrtc.css" />
@@ -13,20 +14,19 @@
        
     </head>
     <body>
-        <div class="container-fluid">
+        <div class="container">
         <nav class="navbar navbar-dark bg-dark rounded-top">
             <span class="navbar-brand mb-0 h1 ">A simple peer to peer Video Call App . Created By<a href="https://www.linkedin.com/in/majumdarnilanjan" class="text-primary font-italic mx-3">Nilanjan</a></span>
           </nav>
-        </div>
-        <div class="container-fluid mt-2">
-        <div class="row ">
+        
+        <div class="row mt-2">
             <div class="col-12 d-flex justify-content-center">
         <div id="videocontainer">
             <div style="position:relative;float:left;">
                 <video autoplay="autoplay" playsinline="playsinline" id="callerVideo"></video>
                 <video autoplay="autoplay" playsinline="playsinline" class="easyrtcMirror" id="selfVideo" muted="true" volume="0" ></video>
               </div>
-              </div>
+              </div>     
         </div>
         </div>
             <label for="basic-url">Click the key to connect: <span class="" id="otherClients"></span></label>
