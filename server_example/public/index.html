@@ -5,37 +5,50 @@
         <title> P2P Videocall</title>
         <link rel="stylesheet" type="text/css" href="/easyrtc/easyrtc.css" />
         <script src="/socket.io/socket.io.js"></script>
+        <link rel="stylesheet" type="text/css" href="./css/main.css" />
         <script type="text/javascript" src="/easyrtc/easyrtc.js"></script>
         <script type="text/javascript" src="js/main.js"></script>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" crossorigin="anonymous">
-        <style>
-            video {
-                     width:100% ;
-                     height:auto;
-                  }
-
-        </style>
+       
     </head>
     <body>
-        <div class="container">
-        <button onclick = "connect();" class="btn btn-primary m-3"> Connect to server <i class="fas fa-plug"></i></button>
-        <div id="otherClients" class=" my-3"> Peers:</div>
-        
-            <div class="row">
-                
-            <div class=" col-12 col-md-6 mb-3">
-                <p class="text-left text-primary"> your video :</p>
-              <video autoplay="autoplay" class="easyrtcMirror" id="selfVideo" muted="muted" volume="0" ></video>
-              
+        <div class="container-fluid">
+        <nav class="navbar navbar-dark bg-dark rounded-top">
+            <span class="navbar-brand mb-0 h1">A simple peer to peer Video Call App</span>
+          </nav>
+        </div>
+        <div class="container mt-2">
+        <div class="row ">
+            <div class="col-12 d-flex justify-content-center">
+        <div id="videocontainer">
+            <div style="position:relative;float:left;">
+                <video autoplay="autoplay" playsinline="playsinline" id="callerVideo"></video>
+                <video autoplay="autoplay" playsinline="playsinline" class="easyrtcMirror" id="selfVideo" muted="true" volume="0" ></video>
+              </div>
+              </div>
+        </div>
+        </div>
+            <label for="basic-url">Click the key to connect: <span class="" id="otherClients"></span></label>
+            <div class="input-group mb-3">
+             <div class="input-group-prepend">
+             <span class="input-group-text mx-3" id="basic-addon3">Partner's  Key :</span>
+             </div>
+            <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
             </div>
-       
-            <div class=" col-12 col-md-6">
-                <p class="text-left text-primary "> friends video :</p>
-              <video autoplay="autoplay" id="callerVideo1"></video>
+            <div class="row mt-5">
+            <div class="col-12 col-md-4 d-flex justify-content-center my-2 ">
+            <button type="button" onclick = "connect();" class="btn btn-outline-primary align-content-center "><span class = "my-2" style="font-size: 2rem ">Connect</span><i class="fas fa-link fa-2x mx-3"></i></button>
+             </div>
+             <div class="col-12 col-md-4 d-flex justify-content-center my-2">
+            <button type="button" class="btn btn-outline-success align-content-center  "><span class = "my-2" style="font-size: 2rem">Call</span><i class="fas fa-phone-square-alt fa-2x mx-3"></i></button>
             </div>
+            <div class="col-12 col-md-4 d-flex justify-content-center my-2">
+            <button type="button" class="btn btn-outline-danger align-content-center  "><span class = "my-2" style="font-size: 2rem">Hangup</span><i class="fas fa-phone-slash fa-2x mx-3"></i></button>
+             </div>
             </div>
         </div>
+       
           <!-- scripts load -->
           <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
           <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>

@@ -1,7 +1,7 @@
 function connect() {
     easyrtc.setRoomOccupantListener(convertListToButtons);
     easyrtc.easyApp("easyrtc.audioVideoSimple", "selfVideo", 
-        ["callerVideo1"],
+        ["callerVideo"],
                     loginSuccess, loginFailure);
 }
 
@@ -36,3 +36,6 @@ function loginSuccess(easyrtcid) {
 function loginFailure(errorCode, message) {
     easyrtc.showError(errorCode, message);
 }
+
+
+
