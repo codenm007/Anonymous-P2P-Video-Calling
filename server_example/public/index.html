@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>MyFirst app</title>
+        <link rel="stylesheet" type="text/css" href="/easyrtc/easyrtc.css" />
+        <script src="/socket.io/socket.io.js"></script>
+        <script type="text/javascript" src="/easyrtc/easyrtc.js"></script>
+        <script type="text/javascript" src="js/main.js"></script>
+        <style>
+            video {
+                     width:320px;
+                     height:240px;
+                  }
+            .divHolder {
+                  position:relative;
+                  float:left; 
+                  background-color: blue;
+                  margin: 1px;
+                  }
+        </style>
+    </head>
+    <body>
+        <button onclick = "connect();"> Connect to server</button>
+        <div id="otherClients">Peers:</div>
+        <div>
+            <div class="divHolder">
+              <video autoplay="autoplay" class="easyrtcMirror" id="selfVideo" muted="muted" volume="0" ></video>
+            </div>
+
+            <div class="divHolder">
+              <video autoplay="autoplay" id="callerVideo1"></video>
+            </div>
+
+            <div class="divHolder">
+              <video autoplay="autoplay" id="callerVideo2"></video>
+            </div>
+
+            <div class="divHolder">
+              <video autoplay="autoplay" id="callerVideo3"></video>
+            </div>
+        </div>
+    </body>
+</html>
