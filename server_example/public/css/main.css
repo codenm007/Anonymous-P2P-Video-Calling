@@ -31,8 +31,8 @@
     border: 1px solid gray;
 }
 #callerVideo {
-   width: auto;
-   height: 720px;
+   width: 960px;
+   height: auto;
 }
 .closeButton {
     position:absolute;
