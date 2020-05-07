@@ -51,7 +51,7 @@ easyrtc.events.on("roomJoin", function(connectionObj, roomName, roomParameter, c
 
 // Start EasyRTC server
 
-easyrtc.setOption("roomDefaultName", "NM's VIDEOROOM 1");
+easyrtc.setOption("roomDefaultName", "NMsVIDEOROOM1");
 
 var rtc = easyrtc.listen(app, socketServer, null, function(err, rtcRef) {
     console.log("Initiated");
