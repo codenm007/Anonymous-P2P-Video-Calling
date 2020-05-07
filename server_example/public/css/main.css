@@ -5,6 +5,8 @@
 
 #videocontainer {
     position:relative;
+     width:600px;
+     height:auto;
 }
 
 .callButton {
@@ -13,25 +15,23 @@
 #connectControls {
     float:left;
 }
-#otherClients {
-    height:50px;
-}
+
 #selfVideo {
     
     position:absolute;
-    left: 10px;
-    top:10px;
+    right: 10px;
+    bottom:10px;
     z-index: 2;
     opacity: 0.8;
-    height:145px;
-    width:240px;
+    height:120px;
+    width:auto;
 }
 #callerVideoBox {
     position:relative;
     border: 1px solid gray;
 }
 #callerVideo {
-   width: 960px;
+   width:fit-content;
    height: auto;
 }
 .closeButton {

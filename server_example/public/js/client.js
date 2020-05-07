@@ -1,13 +1,13 @@
 
 function connect() {
-    easyrtc.setRoomOccupantListener(convertListToButtons);
+    easyrtc.setRoomOccupantListener(showid());
     easyrtc.easyApp("easyrtc.audioVideoSimple", "selfVideo", 
         ["callerVideo"],
                     loginSuccess, loginFailure);
         
     };
 
-    function convertListToButtons (roomName, data, isPrimary) {
+    function showid (roomName, data, isPrimary) {
         for(var easyrtcid in data) {
             var button = document.createElement('button');
     
@@ -17,9 +17,6 @@ function connect() {
                 };
             }(easyrtcid);
     
-             var label = document.createTextNode(easyrtcid);
-             button.appendChild(label);
-             otherClientDiv.appendChild(button);
         }
     }
     
