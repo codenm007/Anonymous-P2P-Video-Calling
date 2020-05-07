@@ -26,6 +26,7 @@ var socketServer = socketIo.listen(webServer, {"log level":1});
 
 easyrtc.setOption("logLevel", "debug");
 
+
 // Overriding the default easyrtcAuth listener, only so we can directly access its callback
 easyrtc.events.on("easyrtcAuth", function(socket, easyrtcid, msg, socketCallback, callback) {
     easyrtc.events.defaultListeners.easyrtcAuth(socket, easyrtcid, msg, socketCallback, function(err, connectionObj){
@@ -49,6 +50,9 @@ easyrtc.events.on("roomJoin", function(connectionObj, roomName, roomParameter, c
 });
 
 // Start EasyRTC server
+
+easyrtc.setOption("roomDefaultName", "NM's VIDEOROOM 1");
+
 var rtc = easyrtc.listen(app, socketServer, null, function(err, rtcRef) {
     console.log("Initiated");
 
@@ -58,6 +62,7 @@ var rtc = easyrtc.listen(app, socketServer, null, function(err, rtcRef) {
         appObj.events.defaultListeners.roomCreate(appObj, creatorConnectionObj, roomName, roomOptions, callback);
     });
 });
+
 
 // Listen on port 8080
 webServer.listen(port, function () {

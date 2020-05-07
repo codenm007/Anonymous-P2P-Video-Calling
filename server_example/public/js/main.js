@@ -1,11 +1,15 @@
+
 function connect() {
+     
     easyrtc.setRoomOccupantListener(convertListToButtons);
     easyrtc.easyApp("easyrtc.audioVideoSimple", "selfVideo", 
         ["callerVideo"],
                     loginSuccess, loginFailure);
 }
 
+
 function convertListToButtons (roomName, data, isPrimary) {
+    // easyrtc.joinRoom(roomName, roomParameters, successCB, failureCB)
     var otherClientDiv = document.getElementById('otherClients');
     otherClientDiv.innerHTML = "";
     for(var easyrtcid in data) {
@@ -36,7 +40,12 @@ function loginSuccess(easyrtcid) {
 function loginFailure(errorCode, message) {
     easyrtc.showError(errorCode, message);
 }
+function createRom(){
+       onRoomCreate = function(appObj, creatorConnectionObj, roomNa = "Nilanjan", roomOptions, callback){
+    pub.util.logDebug("["+appObj.getAppName()+"]" + (creatorConnectionObj?"["+creatorConnectionObj.getEasyrtcid()+"]":"") +  " Room ["+ roomNa +"] Running func 'onRoomCreate'");
+    appObj.createRoom(roomNa, roomOptions, callback);
+    easyrtc.joinRoom(roomNa, roomParameters, successCB, failureCB);
 
-
-
-
+                  console.log("call the function");
+                        };
+                    }
