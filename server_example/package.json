@@ -1,27 +1,20 @@
 {
-  "name": "open-easyrtc-server-example",
-  "version": "0.1.6",
-  "author": "Harold Thetiot <hthetiot@gmail.com>",
-  "description": "Simple EasyRTC server example which includes EasyRTC, Express, and Socket.io",
+  "name": "AnonymousP2p",
+  "version": "1.21.0",
+  "description": "A webRTC video call app",
+  "main": "server.js",
+  "repository": "https://github.com/codenm007/Anonymous-P2P-Video-Calling",
+  "author": "Nilanjan Majumdar",
+  "license": "MIT",
   "private": true,
   "scripts": {
-    "start": "npm run server",
-    "server": "node server.js",
-    "server_ssl": "node server_ssl.js",
-    "docker:build": "docker build -t easyrtc-server -f Dockerfile .",
-    "docker:start": "docker run -it -d -p 8080:8080 easyrtc-server",
-    "docker-compose:build": "docker-compose -f docker-compose.yml build",
-    "docker-compose:start": "docker-compose -f docker-compose.yml up",
-    "docker-compose:stop": "docker-compose -f docker-compose.yml down"
-  },
+  "start": "yarn run server",
+  "server": "node server.js"
+},
   "dependencies": {
-    "express": "^4.17.1",
-    "open-easyrtc": "^2.0.5",
-    "serve-static": "^1.14.1",
-    "socket.io": "^2.2.0"
-  },
-  "license": "BSD-2-Clause",
-  "engines": {
-    "node": ">=0.8"
-  }
+  "express": "^4.17.1",
+  "open-easyrtc": "^2.0.5",
+  "serve-static": "^1.14.1",
+  "socket.io": "^2.2.0"
+}
 }
