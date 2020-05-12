@@ -1,8 +1,7 @@
-// Load required modules
-var http    = require("http");             
-var express = require("express");          
-var serveStatic = require('serve-static');  
-var socketIo = require("socket.io");        
+const http    = require("http");             
+const express = require("express");          
+const serveStatic = require('serve-static');  
+const socketIo = require("socket.io");        
 const port = process.env.PORT || 3000; //port is configured for server
 
 var easyrtc = require("open-easyrtc"); // EasyRTC internal module is loaded
