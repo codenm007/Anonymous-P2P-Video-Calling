@@ -1,20 +1,16 @@
 // Load required modules
-var http    = require("http");              // http server core module
-var express = require("express");           // web framework external module
-var serveStatic = require('serve-static');  // serve static files
-var socketIo = require("socket.io");        // web socket external module
-const port = process.env.PORT || 3000;
-// This sample is using the easyrtc from parent folder.
-// To use this server_example folder only without parent folder:
-// 1. you need to replace this "require("../");" by "require("open-easyrtc");"
-// 2. install easyrtc (npm i open-easyrtc --save) in server_example/package.json
+var http    = require("http");             
+var express = require("express");          
+var serveStatic = require('serve-static');  
+var socketIo = require("socket.io");        
+const port = process.env.PORT || 3000; //port is configured for server
 
-var easyrtc = require("open-easyrtc"); // EasyRTC internal module
+var easyrtc = require("open-easyrtc"); // EasyRTC internal module is loaded
 
-// Set process name
+// process name is set
 process.title = "node-easyrtc";
 
-// Setup and configure Express http server. Expect a subfolder called "static" to be the web root.
+
 var app = express();
 app.use(serveStatic('public', {'index': ['index.html']}));
 
@@ -51,7 +47,7 @@ easyrtc.events.on("roomJoin", function(connectionObj, roomName, roomParameter, c
 
 // Start EasyRTC server
 
-easyrtc.setOption("roomDefaultName", "NMsVIDEOROOM1");
+easyrtc.setOption("roomDefaultName", "NMsVIDEOROOM1"); // renmain b our own room name server
 
 var rtc = easyrtc.listen(app, socketServer, null, function(err, rtcRef) {
     console.log("Initiated");
